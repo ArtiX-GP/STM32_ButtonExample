@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 
 	while (1) {
 		if (!GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_3)) {
-//			Нажали на BTN_3 - уменьшаем предел, увеличиваем частоту.
+//			РќР°Р¶Р°Р»Рё BTN_3 - СѓРјРµРЅСЊС€РёР»Рё РїСЂРµРґРµР», СѓРІРµР»РёС‡РёР»Рё С‡Р°СЃС‚РѕС‚Сѓ.
 
 			if (freq > 0) {
 				freq--;
@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 			_LED3.ledOn();
 			i = 0;
 		} else if (!GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_2)) {
-//			Нажали на BTN_2 - увеличиваем предел, уменьшаем частоту.
+//			РќР°Р¶Р°Р»Рё BTN_2 - СѓРІРµР»РёС‡РёР»Рё РїСЂРµРґРµР», СѓРјРµРЅСЊС€РёР»Рё С‡Р°СЃС‚РѕС‚Сѓ.
 
 			if (freq < 0x100000) {
 				freq++;
@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
 			_LED2.ledOn();
 			i = 0;
 		} else {
-//			Ни одна кнопка не нажата, можно переключать светодиод.
+//			РљРЅРѕРїРєРё РѕС‚Р¶Р°С‚С‹.
 
 			if (i >= freq) {
 				_LED1.ledSwitch();
